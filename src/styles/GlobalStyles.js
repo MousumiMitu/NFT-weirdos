@@ -3,6 +3,8 @@ import "@fontsource/akaya-telivigala"; // Supports weights 100-800
 import "@fontsource-variable/sora";
 
 const GlobalStyles = createGlobalStyle`
+
+
 *,*::before,*::after{
     margin: 0;
     padding: 0;

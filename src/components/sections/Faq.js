@@ -6,7 +6,7 @@ import gsap from "gsap";
 
 const Section = styled.section`
   min-height: 100vh;
-  height: 100vh;
+  height: auto;
   width: 100vw;
   background-color: ${(props) => props.theme.text};
   position: relative;
@@ -27,6 +27,10 @@ const Title = styled.h1`
   align-items: center;
   border-bottom: 2px solid ${(props) => props.theme.body};
   width: fit-content;
+
+  @media (max-width: 48em) {
+    font-size: ${(props) => props.theme.fontxl};
+  }
 `;
 
 const Container = styled.div`
@@ -36,15 +40,33 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 64em) {
+    width: 80%;
+  }
+  @media (max-width: 48em) {
+    width: 90%;
+    flex-direction: column;
+
+    & > *:last-child {
+      & > *:first-child {
+        margin-top: 0;
+      }
+    }
+  }
 `;
 
 const Box = styled.div`
   width: 45%;
-  /* height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+
+  @media (max-width: 64em) {
+    width: 90%;
+    align-self: center;
+  }
+  /* @media (max-width: 48em) {
+    width: 90%;
+    flex-direction: column;
+  } */
 `;
 
 const Faq = () => {
@@ -68,7 +90,7 @@ const Faq = () => {
     };
   }, []);
   return (
-    <Section ref={ref}>
+    <Section id="faq" ref={ref}>
       <Title>FAQ</Title>
       <Container>
         <Box>
